@@ -5,7 +5,7 @@ package main
 import (
 	"flag"
 	"log"
-	"github.com/hanwen/go-fuse/fuse"
+	"github.com/ajray/go-fuse/fuse"
 	"os"
 )
 
