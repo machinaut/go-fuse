@@ -1,7 +1,7 @@
 # Use "gomake install" to build and install this package.
 include $(GOROOT)/src/Make.inc
 
-TARG=github.com/hanwen/go-fuse/fuse
+TARG=github.com/ajray/go-fuse/fuse
 
 GOFILES=\
 	api.go \
