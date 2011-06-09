@@ -3,7 +3,6 @@
 package main
 
 import (
-	"flag"
 	"log"
 	"github.com/ajray/go-fuse/fuse"
 	"os"
@@ -48,10 +47,10 @@ func (me *HelloFs) Open(name string, flags uint32) (file fuse.File, code fuse.St
 }
 
 func main() {
-	if len(flag.Args()) < 1 {
+	if len(os.Args) < 1 {
 		log.Fatal("Usage:\n  hello MOUNTPOINT")
 	}
-	state, conn, err := fuse.MountFileSystem(flag.Arg(0), &HelloFs{}, nil)
+	state, _, err := fuse.MountFileSystem(os.Args[0], &HelloFs{}, nil)
 	if err != nil {
 		log.Fatal("Mount fail: %v\n", err)
 	}
