@@ -1,4 +1,4 @@
-package fuse
+package minfuse
 import (
 	"os"
 	"fmt"
@@ -7,7 +7,7 @@ import (
 func MountFileSystem(mountpoint string, fs FileSystem, opts *FileSystemOptions) (*MountState, *FileSystemConnector, os.Error) {
 	conn := NewFileSystemConnector(fs, opts)
 	mountState := NewMountState(conn)
-	fmt.Printf("Go-FUSE Version %v.\nMounting...\n", Version())
+	fmt.Printf("Go-FUSE Version %v. Mounting...", Version())
 	err := mountState.Mount(mountpoint, nil)
 	if err != nil {
 		return nil, nil, err
